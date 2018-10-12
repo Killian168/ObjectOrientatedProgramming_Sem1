@@ -10,11 +10,19 @@ public class Email {
 	private Customer customer;
 	private Order order;
 	
+	/*
+	 * Class Constructor
+	 */
 	public Email(Customer customer, Order order, boolean payment) {
 		this.customer = customer;
 		this.order = order;
 	}// End Constructor
 	
+	/*
+	 * Methods
+	 */
+	
+	// Creates a set EMail to be sent to the User
 	public String generateEmail(boolean payment) {
 		String greetings = ("\nHello " + customer.getFirstName() + "\n");
 		String emailContent =  null;
@@ -31,7 +39,9 @@ public class Email {
 		return (greetings+emailAddress+emailContent+signOff);
 	}
 	
+	// Sends the Email that is passed into this function
 	public void sendEmail(String fullEmail) {
 		System.out.println(fullEmail);
 	}
+	
 }// End Class Email

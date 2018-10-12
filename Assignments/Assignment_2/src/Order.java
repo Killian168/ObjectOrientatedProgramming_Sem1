@@ -22,6 +22,9 @@ public class Order {
 	private boolean status; // True == Confirmed
 							// False == Not Confirmed
 	
+	/*
+	 * Class Constructor
+	 */
 	public Order(Customer customer, ShoppingCart shoppingCart) {
 		this.customer = customer;
 		this.shoppingCart = shoppingCart;
@@ -32,31 +35,43 @@ public class Order {
 		this.status = false;
 		this.total = getTotalItems();
 		this.setDeliveryAddress(customer.getDeliveryAddress());
-		this.setBillingAddress(customer.getDeliveryAddress());
 	}// End constructor
 	
 	/*
 	 * Methods
 	 */
+	
+	// Processes the Order
 	public void processOrder() {
 		
+		// If there is no Delivery address prompt error message
 		if (!(this.deliveryAddress.isEmpty())) {
 			System.out.println("Error - You have no delivery address");
 		}
 		
-		if (!this.billingAddress.isEmpty()) {
-			this.billingAddress = deliveryAddress;
+		// If there is no Billing Address set it equal to the Delivery Address
+		if (this.billingAddress == null) {
+			this.billingAddress = this.deliveryAddress;
 		}
 		
+		// Removes all the items in the shopping cart items array (Cleans the Cart)
+		for (int i=0; i<this.shoppingCart.getItems().size(); i++) {
+			this.shoppingCart.getItems().remove(i);
+		}
+		
+		// Close the cart for editing
 		this.shoppingCart.closeCart();
 	}
 	
+	// Confirms the Order and send out an email with the order details
 	public void confirmOrder(boolean payment) {
 		this.email = new Email(this.customer, this, payment);
 		// Sends Email
 		this.email.sendEmail(email.generateEmail(payment));
+		this.status = true;
 	}
 	
+	// Updates the users order
 	public void update(Customer customer, ShoppingCart shoppingCart) {
 		this.customer = customer;
 		this.shoppingCart = shoppingCart;
@@ -67,13 +82,25 @@ public class Order {
 		this.status = false;
 	}
 	
-	/*
-	 * Getters and Setters
-	 */
-	
+	// Makes a Unique Order number
 	private String makeOrderNumber() {
 		return (UUID.randomUUID().toString());
 	}
+	
+	// Lists all the items ordered
+	public String listOrderItems() {
+		String string1 = "";
+		
+		for (int i=0; i<this.orderItems.size(); i++) {
+			string1 += ("\n" + this.orderItems.get(i).toString());
+		}
+		
+		return string1;
+	}
+	
+	/*
+	 * Getters and Setters
+	 */
 
 	public Customer getCustomer() {
 		return customer;
@@ -161,16 +188,6 @@ public class Order {
 
 	public void setBillingAddress(Address billingAddress) {
 		this.billingAddress = billingAddress;
-	}
-	
-	public String listOrderItems() {
-		String string1 = "";
-		
-		for (int i=0; i<this.orderItems.size(); i++) {
-			string1 += ("\n" + this.orderItems.get(i).toString());
-		}
-		
-		return string1;
 	}
 	
 }// End Class Order

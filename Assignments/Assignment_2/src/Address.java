@@ -12,6 +12,9 @@ public class Address {
 	private String zip;
 	private String country;
 	
+	/*
+	 * Class Constructor with no address
+	 */
 	public Address() {
 		street = null;
 		town = null;
@@ -19,6 +22,9 @@ public class Address {
 		country = null;
 	}// End Constructor
 	
+	/*
+	 * Class Constructor given address
+	 */
 	public Address(String str, String twn, String zp, String contry) {
 		street = str;
 		town = twn;
@@ -26,6 +32,36 @@ public class Address {
 		country = contry;
 	}// End Constructor
 
+	/*
+	 * Methods
+	 */
+	
+	// Creates a single string of the Address in a single line
+	public String catAddress() {
+		return (street + "," + town + "," + zip + "," + country);
+	}
+	
+	// Creates a String of the Address going to new lines after each attribute
+	public String catAddressNewLine() {
+		return (street + ",\n" + town + ",\n" + zip + ",\n" + country);
+	}
+	
+	// Checks if the Object is empty or not
+	public boolean isEmpty() {
+		if((this.street != null && !this.street.isEmpty())&&((this.town != null && !this.town.isEmpty()))&&((this.zip != null && !this.zip.isEmpty()))&&((this.country != null && !this.country.isEmpty())))
+		{
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+	/*
+	 * Getters and Setters
+	 */
+	
 	public String getStreet() {
 		return street;
 	}
@@ -58,17 +94,4 @@ public class Address {
 		this.country = country;
 	}
 	
-	public String catAddress() {
-		return (street + "," + town + "," + zip + "," + country);
-	}
-	
-	public boolean isEmpty() {
-		if((this.street != null && !this.street.isEmpty())&&((this.town != null && !this.town.isEmpty()))&&((this.zip != null && !this.zip.isEmpty()))&&((this.country != null && !this.country.isEmpty())))
-		{
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
 }// End Class Address

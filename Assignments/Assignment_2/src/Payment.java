@@ -18,6 +18,9 @@ public class Payment {
 	private String bankName;
 	private boolean validCard;
 	
+	/*
+	 * Class Constructor
+	 */
 	public Payment(Customer customer, long cardNum, Calendar cardDate, Address address, String bankName, String cardType) {
 		
 		this.customer = customer;
@@ -30,6 +33,14 @@ public class Payment {
 		
 	}// End constructor
 	
+	/*
+	 * Methods
+	 */
+	
+	/* Checks to see if the Payment details entered are valid card details
+	 * Returns: True is it is Valid
+	 * 			False if it is not Valid
+	 */
 	private boolean isValid(Payment payment) {
 		
 		boolean cardNum1 = false;
@@ -57,6 +68,10 @@ public class Payment {
 		}
 	}
 
+	/* Checks the Date on the Card to make sure it is not expired
+	 * Returns: True if the date is Valid
+	 * 			False if the date is not Valid
+	 */
 	private boolean checkCardDate(Calendar cardDate) {
 		if (cardDate.after(Calendar.getInstance())) {
 			return true;
@@ -68,6 +83,10 @@ public class Payment {
 		
 	}
 
+	/* Checks the Type on the Card to make sure it is either MasterCard or Visa
+	 * Returns: True if the Type is Valid
+	 * 			False if the Type is not Valid
+	 */
 	private boolean checkCardType(String cardType) {
 		if(cardType.equals("MasterCard") || cardType.equals("Visa")) {
 			return true;
@@ -78,6 +97,10 @@ public class Payment {
 		}
 	}
 	
+	/* Checks to see if the Card Number is a Valid 16 digit number
+	 * Returns: True if the Number is Valid
+	 * 			False if the Number is not Valid
+	 */
 	private boolean checkCardNum(long cardNum) {
 		if ((cardNum > 1000000000000000L) && (cardNum < 9999999999999999L)) {
 			return true;
@@ -87,6 +110,10 @@ public class Payment {
 			return false;
 		}
 	}
+	
+	/*
+	 * Getters and Setters
+	 */
 	
 	public Customer getCustomer() {
 		return customer;

@@ -15,14 +15,31 @@ public class Customer {
     private Address billingAddress;
     private Address deliveryAddress;
     
+    /*
+     * Class Constructor
+     */
     public Customer(String firstName, String surName, String emailAddress){
         this.firstName = firstName;
         this.surName = surName;
         this.emailAddress = emailAddress;
-        customerId  = makeCustomerId();
+        customerId  = makeCustomerId(); // Creates a unique id for the customer
         billingAddress = new Address();
         deliveryAddress = new Address();
+    }// End Constructor
+    
+    
+    /*
+     * Methods
+     */
+    
+    // Creates a Unique ID for the Customer
+    private UUID makeCustomerId() {
+        return UUID.randomUUID();
     }
+    
+    /*
+     * Getters and Setters
+     */
     
     public UUID getId() {
         return customerId;
@@ -39,10 +56,6 @@ public class Customer {
     
     public String getEmailAddress() {
         return emailAddress;
-    }
-    
-    private UUID makeCustomerId() {
-        return UUID.randomUUID();
     }
 
     public void setFirstName(String first) {
