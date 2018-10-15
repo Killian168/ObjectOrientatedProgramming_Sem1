@@ -28,7 +28,7 @@ public class Order {
 	public Order(Customer customer, ShoppingCart shoppingCart) {
 		this.customer = customer;
 		this.shoppingCart = shoppingCart;
-		this.orderItems = shoppingCart.getItems();
+		this.orderItems = new ArrayList<Item>(shoppingCart.getItems());
 		this.orderNumber = makeOrderNumber();
 		this.payment = null;
 		this.email = null;
@@ -55,9 +55,7 @@ public class Order {
 		}
 		
 		// Removes all the items in the shopping cart items array (Cleans the Cart)
-		for (int i=0; i<this.shoppingCart.getItems().size(); i++) {
-			this.shoppingCart.getItems().remove(i);
-		}
+		this.shoppingCart.getItems().clear();
 		
 		// Close the cart for editing
 		this.shoppingCart.closeCart();
