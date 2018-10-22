@@ -33,36 +33,37 @@ public class Trout extends Fish {
 
 		// Creates String with all values of Trout
 		String strng = "";
-		strng += "Canary; ";
-		strng += "colour: ";
+		strng += "Trout; ";
+		strng += "\ncolour: ";
 		strng += this.colour;
 		strng += "; ";
-		strng += "edible: ";
+		strng += "\nedible: ";
 		strng += this.edible;
 		strng += "; ";
-		strng += "birthProcess: ";
+		strng += "\nbirthProcess: ";
 		strng += this.birthProcess;
 		strng += "\n";
 
 		// Adds all values if Bird
-		strng += "Bird;";
-		strng += "Feathers:";
+		strng += "Fish;";
+		strng += "\nFins:";
 		strng += this.hasFins;
 		strng += "; ";
-		strng += "Wings";
+		strng += "\nCanSwim:";
 		strng += this.canSwim;
 		strng += "; ";
-		strng += "Flies";
+		strng += "\nHasGills:";
 		strng += this.hasGills;
 		strng += "\n";
 
 		// Adds all values of Animal
 		strng += "Animal";
-		strng += "hasSkin:";
+		strng += "\nhasSkin:";
 		strng += this.hasSkin;
 		strng += "; ";
-		strng += "Breathes";
+		strng += "\nBreathes:";
 		strng += this.breathes;
+		strng += "\n";
 
 		return strng;
 	}// End toString

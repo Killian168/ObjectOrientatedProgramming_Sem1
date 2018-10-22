@@ -41,32 +41,33 @@ public class Canary extends Bird
     	// Creates String with all values of Canary
         String strng ="";
         strng+= "Canary; ";
-        strng+= "name: ";
+        strng+= "\nname: ";
         strng+= name;
         strng+= "; ";
-        strng+= "colour: ";
+        strng+= "\ncolour: ";
         strng+= colour;
         strng+= "\n";
         
         // Adds all values if Bird
         strng += "Bird;";
-        strng += "Feathers:";
+        strng += "\nFeathers:";
         strng += this.hasFeathers;
         strng+= "; ";
-        strng += "Wings";
+        strng += "\nWings:";
         strng += this.hasWings;
         strng+= "; ";
-        strng += "Flies";
+        strng += "\nFlies:";
         strng += this.flies;
         strng += "\n";
         
         // Adds all values of Animal
         strng += "Animal";
-        strng += "hasSkin:";
+        strng += "\nhasSkin:";
         strng += this.hasSkin;
         strng+= "; ";
-        strng += "Breathes";
+        strng += "\nBreathes:";
         strng += this.breathes;
+        strng += "\n";
         
         return strng;
     }

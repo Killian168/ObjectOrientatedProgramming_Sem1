@@ -34,32 +34,33 @@ public class Shark extends Fish
     	// Creates String with all values of Salmon
         String strng ="";
         strng+= "Shark; ";
-        strng+= "isDangerous: ";
+        strng+= "\nisDangerous: ";
         strng+= this.isDangerous;
         strng+= "; ";
-        strng+= "CanBite: ";
+        strng+= "\nCanBite: ";
         strng+= this.canBite;
         strng+= "\n";
         
         // Adds all values if Bird
-        strng += "Bird;";
-        strng += "Feathers:";
+        strng += "Fish;";
+        strng += "\nHasFins:";
         strng += this.hasFins;
         strng+= "; ";
-        strng += "Wings";
+        strng += "\nCanSwim:";
         strng += this.canSwim;
         strng+= "; ";
-        strng += "Flies";
+        strng += "\nHasGills:";
         strng += this.hasGills;
         strng += "\n";
         
         // Adds all values of Animal
         strng += "Animal";
-        strng += "hasSkin:";
+        strng += "\nhasSkin:";
         strng += this.hasSkin;
         strng+= "; ";
-        strng += "Breathes";
+        strng += "\nBreathes";
         strng += this.breathes;
+        strng += "\n";
         
         return strng;
     }// End toString method

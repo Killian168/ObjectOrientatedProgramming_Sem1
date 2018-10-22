@@ -23,6 +23,8 @@ public class AnimalTests
 	private static void toStringTest() 
 	{
 		
+		System.out.println("************************* ToStringTest ************************************");
+		
 		// Creates an array that holds one of each animal
 		Animal[] animals1 = new Animal[4];
 		animals1[0] = new Ostrich();
@@ -36,10 +38,14 @@ public class AnimalTests
 			System.out.println("\n\n"+animals1[i]);
 		}
 		
+		System.out.println("************************* End ToStringTest **********************************");
+		
 	}// End toStringTest()
 
 	private static void equalsTest() 
 	{
+		
+		System.out.println("************************* EqualsTest ************************************");
 		
 		// Creates an array of standard object
 		Animal[] animals1 = new Animal[4];
@@ -86,6 +92,8 @@ public class AnimalTests
 				}
 			}// End for(j)
 		}// End for(i)
+		
+		System.out.println("************************* End EqualsTest ************************************");
 		
 	}// End equalsTest
 
