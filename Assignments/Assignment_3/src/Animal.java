@@ -6,7 +6,7 @@
  * @author Killian O'Dálaigh
  * @version (18 October 2018)
  */
-public class Animal
+public abstract class Animal
 {
     // instance variables - replace the example below with your own
     boolean hasSkin;

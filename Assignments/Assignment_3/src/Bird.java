@@ -6,7 +6,7 @@
  * @author Killian O'Dálaigh	
  * @version (18 October 2018)
  */
-public class Bird extends Animal
+public abstract class Bird extends Animal
 {
     //instance variables (fields)
     boolean hasFeathers;

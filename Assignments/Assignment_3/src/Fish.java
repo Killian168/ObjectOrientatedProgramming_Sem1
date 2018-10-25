@@ -5,7 +5,7 @@
  * @author Killian O'Dálaigh
  * @version (18 October 2018)
  */
-public class Fish extends Animal 
+public abstract class Fish extends Animal 
 {
 
 	boolean hasFins;
